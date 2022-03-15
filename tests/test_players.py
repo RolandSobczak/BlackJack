@@ -1,7 +1,7 @@
 """This module tests players module
 """
-from ..core.players import User, Croupier
-from ..core.storage import Card
+from core.players import User, Croupier
+from core.storage import Card
 
 
 def test_add_cards():

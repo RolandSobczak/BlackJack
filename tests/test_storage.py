@@ -1,6 +1,6 @@
 """This module tests storage module
 """
-from ..core.storage import Card, Deck
+from core.storage import Card, Deck
 
 
 def test_card_gen():

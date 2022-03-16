@@ -2,7 +2,15 @@
 This module is responsible for representation data in blackjack module
 """
 from random import shuffle
+from .exceptions import InvalidColor
 
+
+COLORS = {
+    'Clubs' : '\u2663',
+    'Diamonds': '\u2666',
+    'Hearts': '\u2665',
+    'Spades': '\u2660',
+}
 
 class Card:
     """
@@ -17,7 +25,11 @@ class Card:
             symbol (int): Symbol of the card, must be in the range 1-13.
             Symbols: 1 - Ace, 11 - Jack, 12 - Qeen, 13 - King
         """
-        self.color = color
+        if (color_symbol := COLORS.get(color)):
+            self.color = color_symbol
+        else:
+            raise InvalidColor('Wrong value')
+
         self.symbol = symbol
         self.value = self.symbol if self.symbol < 11 else 10
 
@@ -121,7 +133,6 @@ class Deck:
         Yields:
             Card: Instance of the Card class
         """
-        colors = ('CLubs', 'Diamonds', 'Hearts', 'Spades')
-        for color in colors:
+        for color in COLORS:
             for symbol in range(1, 14):
                 yield Card(color, symbol)

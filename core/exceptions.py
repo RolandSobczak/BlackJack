@@ -25,3 +25,7 @@ class UserWins(Exception):
 class CrupierWins(Exception):
     """This exception is called when user exceeds 21 points
     """
+
+class InvalidColor(Exception):
+    """This exception is called somone initialized Card with wrong color value
+    """

@@ -14,9 +14,9 @@ def test_card_str():
     """Checks str method of Card class
     """
     verb = str(Card('Clubs', 1))
-    assert verb == 'c: Clubs s: Ace'
+    assert verb == 'c: ♣ s: Ace'
     verb = str(Card('Clubs', 2))
-    assert verb == 'c: Clubs s: 2'
+    assert verb == 'c: ♣ s: 2'
 
 
 def test_card_eq():
